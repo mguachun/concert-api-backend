@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     has_many :concerts
-    # has_secure_password
+    has_secure_password
 
     validates :email, presence: true, uniqueness: true;
 end
