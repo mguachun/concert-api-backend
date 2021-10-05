@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :destroy]
-
+  def index
+    @users = User.all
+    render json: @users
+  end
 
   def create
     @user = User.new(email: params[:email], password: params[:password])
@@ -17,11 +20,13 @@ class UsersController < ApplicationController
     if @user && @user.authenticate(params[:password])
       render json: @user
     else
+      if @user
       render json: "Invalid Password", status: :unprocessable_entity
     else
       render json: "Email Address Not Found", status: :unprocessable_entity
     end
   end
+end
    
 
 
