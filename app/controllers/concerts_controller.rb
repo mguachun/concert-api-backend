@@ -1,12 +1,18 @@
 class ConcertsController < ApplicationController
-  before_action :set_concert, except: [:index]
+  before_action :set_concert, except: [:index, :create]
   def index
     concerts = Concert.all
     render json: concerts,
     except: [:created_at, :updated_at]
   end
 
+  def show
+    render json: @concerts,
+    except: [:created_at, :updated_at]
+  end
+
   def create
+    concert = Concert.new(concert_params)
     if @concert.save
       render json: @concert,
       except: [:created_at, :updated_at]
