@@ -13,7 +13,7 @@ class ConcertsController < ApplicationController
 
   def create
     concert = Concert.new(concert_params)
-    if @concert.save
+    if concert.save
       render json: @concert,
       except: [:created_at, :updated_at]
     else
