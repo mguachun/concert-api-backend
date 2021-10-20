@@ -7,7 +7,7 @@ class ConcertsController < ApplicationController
   end
 
   def show
-    render json: @concerts,
+    render json: @concert,
     except: [:created_at, :updated_at]
   end
 
@@ -23,13 +23,13 @@ class ConcertsController < ApplicationController
 
 
   def destroy
+    @concert = Concert.find_by_id(params[:id])
     @concert.destroy 
-    render json: "Concert Successfully Deleted"
   end
 
   private 
   def set_concert
-    @concert = User.find(params[:user_id]).concerts.find(params[:id])
+    @concert = Concert.find_by_id(params[:id])
   end
 
   def concert_params
