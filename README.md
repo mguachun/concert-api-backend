@@ -8,7 +8,7 @@ Ticket Tracker is a single page application that helps you keep track of your co
 
 ## Installation
 
-To get started first, fork and clone this repo. Also fork and clone [the frontend rails api repo](https://github.com/mguachun/concert-client.git).
+To get started first, fork and clone this repo. Also fork and clone [the frontend rails api repo](https://github.com/mguachun/flix-fix-backend.git).
 
 And then execute:
 
@@ -46,7 +46,7 @@ This will open up the index html file and get your development environment start
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/mguachun/concert-client.git. 
+Bug reports and pull requests are welcome on GitHub at https://github.com/mguachun/flix-fix-client.git. 
 
 
 ## Available Scripts
